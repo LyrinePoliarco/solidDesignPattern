@@ -1,0 +1,4 @@
+interface BorrowingService {
+    boolean borrowResource(LibraryResource resource);
+    boolean returnResource(LibraryResource resource);
+}
