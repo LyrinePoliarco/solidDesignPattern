@@ -1,0 +1,41 @@
+class Thesis implements LibraryResource {
+    private String title;
+    private boolean available;
+    private String author;
+    private String department;
+
+    public Thesis(String title, String author, String department) {
+        this.title = title;
+        this.author = author;
+        this.department = department;
+        this.available = true;
+    }
+
+    @Override
+    public String getTitle() {
+        return title;
+    }
+
+    @Override
+    public boolean isAvailable() {
+        return available;
+    }
+
+    @Override
+    public void setBorrowed(boolean borrowed) {
+        this.available = !borrowed;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    @Override
+    public String getResourceType() {
+        return "Thesis";
+    }
+}
