@@ -1,11 +1,29 @@
-class Book extends BaseLibraryResource {
+class Book implements LibraryResource {
+    private String title;
+    private boolean available;
     private String author;
     private String isbn;
 
     public Book(String title, String author, String isbn) {
-        super(title);
+        this.title = title;
         this.author = author;
         this.isbn = isbn;
+        this.available = true;
+    }
+
+    @Override
+    public String getTitle() {
+        return title;
+    }
+
+    @Override
+    public boolean isAvailable() {
+        return available;
+    }
+
+    @Override
+    public void setBorrowed(boolean borrowed) {
+        this.available = !borrowed;
     }
 
     public String getAuthor() {
