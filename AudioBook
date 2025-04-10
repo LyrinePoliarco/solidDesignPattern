@@ -1,0 +1,41 @@
+class AudioBook implements LibraryResource {
+    private String title;
+    private boolean available;
+    private String narrator;
+    private int durationMinutes;
+
+    public AudioBook(String title, String narrator, int durationMinutes) {
+        this.title = title;
+        this.narrator = narrator;
+        this.durationMinutes = durationMinutes;
+        this.available = true;
+    }
+
+    @Override
+    public String getTitle() {
+        return title;
+    }
+
+    @Override
+    public boolean isAvailable() {
+        return available;
+    }
+
+    @Override
+    public void setBorrowed(boolean borrowed) {
+        this.available = !borrowed;
+    }
+
+    public String getNarrator() {
+        return narrator;
+    }
+
+    public int getDurationMinutes() {
+        return durationMinutes;
+    }
+
+    @Override
+    public String getResourceType() {
+        return "AudioBook";
+    }
+}
