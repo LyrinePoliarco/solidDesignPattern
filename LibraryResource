@@ -1,6 +1,0 @@
-interface LibraryResource {
-    String getTitle();
-    String getResourceType();
-    boolean isAvailable();
-    void setBorrowed(boolean borrowed);
-}

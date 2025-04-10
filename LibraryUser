@@ -1,7 +1,0 @@
-interface LibraryUser {
-    String getName();
-    String getId();
-    boolean borrowResource(LibraryResource resource);
-    boolean returnResource(LibraryResource resource);
-    List<LibraryResource> getBorrowedResources();
-}
