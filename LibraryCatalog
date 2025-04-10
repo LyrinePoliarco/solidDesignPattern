@@ -1,0 +1,5 @@
+interface LibraryCatalog {
+    void addResource(LibraryResource resource);
+    LibraryResource findResourceByTitle(String title);
+    List<LibraryResource> getAllResources();
+}
