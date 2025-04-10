@@ -1,0 +1,41 @@
+class Journal implements LibraryResource {
+    private String title;
+    private boolean available;
+    private String publisher;
+    private int volume;
+
+    public Journal(String title, String publisher, int volume) {
+        this.title = title;
+        this.publisher = publisher;
+        this.volume = volume;
+        this.available = true;
+    }
+
+    @Override
+    public String getTitle() {
+        return title;
+    }
+
+    @Override
+    public boolean isAvailable() {
+        return available;
+    }
+
+    @Override
+    public void setBorrowed(boolean borrowed) {
+        this.available = !borrowed;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    @Override
+    public String getResourceType() {
+        return "Journal";
+    }
+}
