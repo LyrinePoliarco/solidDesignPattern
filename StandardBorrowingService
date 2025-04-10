@@ -1,0 +1,23 @@
+class StandardBorrowingService implements BorrowingService {
+    @Override
+    public boolean borrowResource(LibraryResource resource) {
+        if (!resource.isAvailable()) {
+            System.out.println("Sorry, " + resource.getResourceType() + " '" + resource.getTitle() + "' is not available.");
+            return false;
+        }
+        resource.setBorrowed(true);
+        System.out.println(resource.getResourceType() + " '" + resource.getTitle() + "' has been borrowed successfully.");
+        return true;
+    }
+
+    @Override
+    public boolean returnResource(LibraryResource resource) {
+        if (resource.isAvailable()) {
+            System.out.println("Error: " + resource.getResourceType() + " '" + resource.getTitle() + "' was not borrowed.");
+            return false;
+        }
+        resource.setBorrowed(false);
+        System.out.println(resource.getResourceType() + " '" + resource.getTitle() + "' has been returned successfully.");
+        return true;
+    }
+}
